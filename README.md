@@ -2,6 +2,8 @@
 
 <img src="./aigc/readme.png" alt="readme" style="zoom:150%;"/>
 
+[PDF版](https://github.com/zxh0/blockchain-book/releases)
+
 
 
 ## 关于本书
