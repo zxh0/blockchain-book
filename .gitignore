@@ -1,1 +1,10 @@
 .DS_Store
+
+# VitePress 站点：以下都是从 Book.md 生成的产物
+node_modules/
+docs/book/
+docs/public/images/
+docs/public/aigc/
+docs/.vitepress/sidebar.json
+docs/.vitepress/dist/
+docs/.vitepress/cache/

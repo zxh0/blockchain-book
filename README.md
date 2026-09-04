@@ -2,7 +2,7 @@
 
 <img src="./aigc/readme.png" alt="readme" style="zoom:150%;"/>
 
-[PDF版](https://github.com/zxh0/blockchain-book/releases)
+[在线阅读](https://zxh0.github.io/blockchain-book/) · [PDF版](https://github.com/zxh0/blockchain-book/releases)
 
 
 
@@ -22,6 +22,20 @@
 - 能提升阅读体验的排版、案例优化建议
 
 你的每一份反馈，都是让这本书更完善、更易读的重要帮助。
+
+
+
+## 在线版
+
+全书内容都在 `Book.md` 这一个文件里，网站是从它自动生成的：`scripts/build-site.mjs` 按章拆分成 `docs/book/*.md` 并生成侧边栏目录，再由 VitePress 构建，推送到 `main` 后 GitHub Actions 会自动部署。**改书只需要改 `Book.md`**，不用管 `docs/` 下的生成物。
+
+本地预览：
+
+```bash
+npm install
+npm run dev      # 本地开发，改完 Book.md 重跑即可
+npm run build    # 构建静态站点到 docs/.vitepress/dist
+```
 
 
 
