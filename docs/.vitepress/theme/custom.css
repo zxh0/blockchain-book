@@ -1,0 +1,59 @@
+/* 中文正文的阅读体验微调 */
+:root {
+  --vp-layout-max-width: 1520px;
+  --vp-content-max-width: 800px;
+}
+
+.VPDoc .content-container {
+  max-width: var(--vp-content-max-width);
+}
+
+.vp-doc p {
+  line-height: 1.85;
+  text-align: justify;
+}
+
+/* 章节大标题多留些呼吸空间 */
+.vp-doc h1 {
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* 插图：居中、不超出正文宽度 */
+.vp-doc img {
+  display: block;
+  margin: 1.75rem auto;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* 手绘示意图是白底线稿，深色模式下直接铺开会太刺眼，
+   统一放进一张白色卡片里，浅色模式下几乎看不出边界。 */
+.vp-doc img[src*="/images/"] {
+  background: #fff;
+  padding: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* 每章开头的整幅插画不需要白边 */
+.vp-doc img[src*="/aigc/"] {
+  border-radius: 12px;
+}
+
+/* 公式：MathJax 输出的 SVG 用 currentColor，深色模式自动跟随正文颜色。
+   块级公式在窄屏上可能超宽，让它自己横向滚动，不要撑破页面。 */
+.vp-doc mjx-container[display='true'] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+.vp-doc mjx-container svg {
+  max-width: none;
+}
+
+/* 首页封面 */
+.VPHero .VPImage {
+  border-radius: 12px;
+  box-shadow: var(--vp-shadow-3);
+}
