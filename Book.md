@@ -160,7 +160,7 @@
 
 <img src="./images/ch00/caesar.png" alt="caesar" style="zoom:50%;"/>
 
-在密码学中，我们把加密前的数据叫做明文（Plaintext），把加密后的数据叫做密文（Cyphertext）。像上面凯撒加密算法里，加密（Encrypt）是把每个字母右移`3`，解密（Decrypt）是把每个字母左移`3`。这里`3`必须严格保密才行，否则其他人就可以轻易破解你的消息，我们把它叫做密钥（Secret Key）。由于加密和解密都是用同一把密钥，所以我们把这样的加密算法叫做对称加密算法（Symmetric Encryption Algorithm），如下图所示：
+在密码学中，我们把加密前的数据叫做明文（Plaintext），把加密后的数据叫做密文（Ciphertext）。像上面凯撒加密算法里，加密（Encrypt）是把每个字母右移`3`，解密（Decrypt）是把每个字母左移`3`。这里`3`必须严格保密才行，否则其他人就可以轻易破解你的消息，我们把它叫做密钥（Secret Key）。由于加密和解密都是用同一把密钥，所以我们把这样的加密算法叫做对称加密算法（Symmetric Encryption Algorithm），如下图所示：
 
 <img src="./images/ch00/encrypt.png" alt="encrypt" style="zoom:50%;"/>
 
@@ -1744,20 +1744,20 @@ $$
 | Decryption                                   | 解密             | 第零章，加密解密 |
 | Caesar Cipher Algorithm                      | 凯撒加密算法     | 第零章，加密解密 |
 | Plaintext                                    | 明文             | 第零章，加密解密 |
-| Cyphertext                                   | 密文             | 第零章，加密解密 |
+| Ciphertext                                   | 密文             | 第零章，加密解密 |
 | Secret Key                                   | 密钥             | 第零章，加密解密 |
 | Private Key                                  | 私钥             | 第零章，加密解密 |
 | Public Key                                   | 公钥             | 第零章，加密解密 |
 | Symmetric Encryption Algorithm               | 对称加密算法     | 第零章，加密解密 |
 | Asymmetric Encryption Algorithm              | 非对称加密算法   | 第零章，加密解密 |
-| Hash Algorithm                               | 哈希算法         | 第零章，加密解密 |
+| Hash Algorithm                               | 哈希算法         | 第零章，哈希运算 |
 | Digest                                       | 摘要             | 第零章，哈希运算 |
 | Brute-force Attack                           | 暴力破解         | 第零章，哈希运算 |
 | DSA（Digital Signature Algorithm）           | 数字签名算法     | 第零章，数字签名 |
 | Client                                       | 客户端           | 第一章，服务架构 |
 | Server                                       | 服务器           | 第一章，服务架构 |
 | Database                                     | 数据库           | 第一章，服务架构 |
-| TPS（Transaction per Second）                | 每秒交易数       | 第一章，服务架构 |
+| TPS（Transactions per Second）               | 每秒交易数       | 第一章，服务架构 |
 | Horizontal Scaling/Scale Out                 | 横向扩展         | 第一章，服务架构 |
 | Vertical Scaling/Scale Up                    | 纵向扩展         | 第一章，服务架构 |
 | Transaction                                  | 事务、交易       | 第一章，简化业务 |
@@ -1779,16 +1779,17 @@ $$
 | Genesis Block                                | 创世区块         | 第四章，哈希锁链 |
 | Double Spend Attack                          | 双花攻击         | 第四章，哈希锁链 |
 | Merkle Tree                                  | 默克尔树         | 第四章，默克尔树 |
-| Node                                         | 节点             | 第五章，去中⼼化 |
-| P2P（Peer-to-Peer） Network                  | 点对点网络       | 第五章，去中⼼化 |
-| Sharding                                     | 分片             | 第五章，去中⼼化 |
-| Replication                                  | 复制             | 第五章，去中⼼化 |
-| Open Source Software                         | 开源软件         | 第五章，去中⼼化 |
-| Private Chain                                | 私有链           | 第五章，去中⼼化 |
-| Public Chain                                 | 公有链           | 第五章，去中⼼化 |
-| Consortium Chain                             | 联盟链           | 第五章，去中⼼化 |
-| Mainnet                                      | 主网             | 第五章，去中⼼化 |
-| Testnet                                      | 测试网           | 第五章，去中⼼化 |
+| Node                                         | 节点             | 第五章，去中心化 |
+| P2P（Peer-to-Peer） Network                  | 点对点网络       | 第五章，去中心化 |
+| Sharding                                     | 分片             | 第五章，去中心化 |
+| Replication                                  | 复制             | 第五章，去中心化 |
+| Open Source Software                         | 开源软件         | 第五章，去中心化 |
+| Private Chain                                | 私有链           | 第五章，去中心化 |
+| Public Chain                                 | 公有链           | 第五章，去中心化 |
+| Consortium Chain                             | 联盟链           | 第五章，去中心化 |
+| Mainnet                                      | 主网             | 第五章，去中心化 |
+| Testnet                                      | 测试网           | 第五章，去中心化 |
+| Faucet                                       | 水龙头           | 第五章，去中心化 |
 | Gossip Protocol                              | “八卦”协议       | 第五章，数据传播 |
 | Fork                                         | 分叉             | 第五章，共识机制 |
 | Temporary Fork                               | 临时分叉         | 第五章，共识机制 |
@@ -1801,11 +1802,12 @@ $$
 | Miner                                        | 矿工             | 第五章，数字淘金 |
 | Mining Machine                               | 矿机             | 第五章，数字淘金 |
 | Total Supply                                 | 总供应量         | 第五章，总供应量 |
+| Halving                                      | 减半             | 第五章，总供应量 |
 | Dust Attack                                  | 粉尘攻击         | 第五章，总供应量 |
-| Miner Fee                                    | 矿机费           | 第五章，哈希竞赛 |
+| Miner Fee                                    | 矿工费           | 第五章，总供应量 |
 | Hashrate                                     | 哈希算力         | 第五章，哈希竞赛 |
 | Mining Pool                                  | 矿池             | 第五章，哈希竞赛 |
-| PoS（Proof of Stake）                        | 权益证明         | 第五章，本章小节 |
+| PoS（Proof of Stake）                        | 权益证明         | 第五章，本章小结 |
 | Sidechain                                    | 侧链             | 第五章，没有银弹 |
 | Lightning Network                            | 闪电网络         | 第五章，没有银弹 |
 | OP Rollups（Optimistic Rollups）             | 乐观汇总         | 第五章，没有银弹 |
@@ -1821,6 +1823,7 @@ $$
 | DoS（Denial of Service） Attack              | 拒绝服务攻击     | 第六章，停机问题 |
 | App（Application）                           | 应用程序         | 第七章，应用程序 |
 | World State                                  | 世界状态         | 第七章，区块格式 |
+| MPT（Merkle Patricia Trie）                  | 默克尔帕特里夏树 | 第七章，世界状态 |
 | Smart Contract                               | 智能合约         | 第七章，智能合约 |
 | Storage                                      | 持久存储         | 第七章，智能合约 |
 | Reentrancy Attack                            | 可重入攻击       | 第七章，智能合约 |
@@ -1830,7 +1833,7 @@ $$
 | Gas Price                                    | 燃料价格         | 第七章，指令计费 |
 | Gas Limit                                    | 燃料限制         | 第七章，指令计费 |
 | DApp（Decentralized Application）            | 去中心化应用     | 第七章，生态系统 |
-| DAO（Decentralized Autonomous Organization） | 去中⼼化⾃治组织 | 第七章，生态系统 |
+| DAO（Decentralized Autonomous Organization） | 去中心化自治组织 | 第七章，生态系统 |
 | Metaverse                                    | 元宇宙           | 第七章，生态系统 |
 | Web3                                         | Web3             | 第七章，生态系统 |
 | DeFi（Decentralized Finance）                | 去中心化金融     | 第七章，生态系统 |
@@ -1847,8 +1850,8 @@ $$
 | Metadata                                     | 元信息           | 第八章，代币合约 |
 | Mint                                         | 代币铸造         | 第八章，锚定机制 |
 | Burn                                         | 代币销毁         | 第八章，锚定机制 |
-| ICO（Initial Coin Offering）                 | 首次代币发行     | 第八章，本章小节 |
-| Order Book                                   | 订单薄           | 第九章，订单账簿 |
+| ICO（Initial Coin Offering）                 | 首次代币发行     | 第八章，本章小结 |
+| Order Book                                   | 订单簿           | 第九章，订单账簿 |
 | Limit Order                                  | 限价单           | 第九章，订单账簿 |
 | Market Order                                 | 市价单           | 第九章，订单账簿 |
 | CPMM（Constant Product Market Maker）        | 恒定乘积做市     | 第九章，自动做市 |
@@ -1871,13 +1874,14 @@ $$
 | Liquidation                                  | 清算             | 第十章，超额抵押 |
 | Liquidation Factor                           | 清算系数         | 第十章，超额抵押 |
 | Liquidator                                   | 清算者           | 第十章，超额抵押 |
-| Liquidation Discount                         | 折扣             | 第十章，超额抵押 |
+| Liquidation Discount                         | 清算折扣         | 第十章，超额抵押 |
 | LTV（Loan to Value）                         | 贷款价值比       | 第十章，超额抵押 |
 | Utilization Ratio                            | 资金利用率       | 第十章，利率模型 |
 | Optimal Utilization                          | 最优利用率       | 第十章，利率模型 |
 | Kink                                         | 拐点             | 第十章，利率模型 |
 | Reserve Factor                               | 储备系数         | 第十章，利率模型 |
 | APR（Annual Percentage Rate）                | 年化利率         | 第十章，利息计算 |
-| ATH（All-Time High）                         | 历史新高         | 第十章，本章小节 |
-| KOL（Key Opinion Leader）                    | 意见领袖         | 第十章，本章小节 |
-| FOMO（Fear of Missing Out）                  | 错失恐惧症       | 第十章，本章小节 |
+| Exchange Rate                                | 兑换率           | 第十章，利息分配 |
+| ATH（All-Time High）                         | 历史新高         | 第十章，本章小结 |
+| KOL（Key Opinion Leader）                    | 意见领袖         | 第十章，本章小结 |
+| FOMO（Fear of Missing Out）                  | 错失恐惧症       | 第十章，本章小结 |
