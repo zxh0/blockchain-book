@@ -19,6 +19,20 @@
   letter-spacing: 0.02em;
 }
 
+/* 表格撑满正文宽度。VitePress 默认 display: block 让表格只按内容收缩；
+   窄屏上退回默认，表格可以横向滚动，不撑破页面。 */
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .vp-doc table {
+    display: block;
+    width: auto;
+  }
+}
+
 /* 插图：居中、不超出正文宽度 */
 .vp-doc img {
   display: block;
