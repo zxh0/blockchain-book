@@ -27,14 +27,20 @@ function slugOf(title) {
   throw new Error(`未知的章节标题，请更新 slugOf(): ${title}`)
 }
 
-/** 把 Markdown 里的 <img> 标签转成标准 Markdown 图片语法，并把 ./ 路径改成站点绝对路径。 */
+/** 把 Markdown 里的 <img> 标签转成标准 Markdown 图片语法，并把 ./ 路径改成站点绝对路径。
+ *  转成 Markdown 语法是为了让 VitePress 自动加上 base 前缀（裸 HTML 它不管）。
+ *  width 属性（插图是两倍像素导出的，width 写像素宽度的一半）借 Markdown 图片的
+ *  title 位带过去，写成 ![alt](url "width=N")，docs/.vitepress/config.mts 里的渲染
+ *  钩子再把它还原成 <img width="N">。 */
 function normalizeImages(md) {
   return md.replace(/<img\s+([^>]*?)\/?>/g, (whole, attrs) => {
     const src = attrs.match(/src="([^"]+)"/)
     if (!src) return whole
     const alt = attrs.match(/alt="([^"]*)"/)
+    const width = attrs.match(/\bwidth="(\d+)"/)
     const url = src[1].replace(/^\.\//, '/') // ./images/ch00/hex.png -> /images/ch00/hex.png
-    return `![${alt ? alt[1] : ''}](${url})`
+    const title = width ? ` "width=${width[1]}"` : ''
+    return `![${alt ? alt[1] : ''}](${url}${title})`
   })
 }
 

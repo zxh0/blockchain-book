@@ -22,6 +22,21 @@ export default defineConfig({
     image: { lazyLoading: true },
     // 书里有 $...$ 和 $$...$$ 公式，需要 markdown-it-mathjax3
     math: true,
+    // 插图的 width（像素宽度的一半）由 scripts/build-site.mjs 放在图片的 title 位
+    // 带过来：![alt](url "width=N")。这里把它还原成 <img width="N">，并去掉 title，
+    // 免得鼠标悬停时冒出一个 "width=N" 的提示。
+    config(md) {
+      const image = md.renderer.rules.image!
+      md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        const m = /^width=(\d+)$/.exec(token.attrGet('title') ?? '')
+        if (m) {
+          token.attrs = token.attrs!.filter(([name]) => name !== 'title')
+          token.attrSet('width', m[1])
+        }
+        return image(tokens, idx, options, env, self)
+      }
+    },
   },
 
   themeConfig: {

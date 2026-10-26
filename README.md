@@ -1,6 +1,6 @@
 # 人人能懂的区块链
 
-<img src="./aigc/readme.png" alt="readme" style="zoom:150%;"/>
+<img src="./aigc/readme.png" alt="readme" width="1152"/>
 
 [在线阅读](https://zxh0.github.io/blockchain-book/) · [PDF版](https://github.com/zxh0/blockchain-book/releases)
 
